@@ -1,11 +1,8 @@
-# Planning Module
+const express = require('express');
+const app = express();
 
-## API routes
-
-### get activities
-- GET /api/activities
-```
-{
+app.get('/api/activities', (req,res) => { res.json(
+    {
     "data": [
         {
             "title": "Service&maintenance",
@@ -18,5 +15,6 @@
             "imageUrl":"http://google.com/tst.jpg"
         }
     ]
-}
-```
+}) });
+
+app.listen (3000, () => {console.log("Hello")});

@@ -1,0 +1,15 @@
+{
+  "name": "planning-module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/cockleshell/planning-module",
+  "author": "cockleshell <127024709+cockleshell@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.21"
+  },
+  "scripts": {
+    "start":"nodemon index.js"
+  }
+}
