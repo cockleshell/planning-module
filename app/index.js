@@ -6,15 +6,32 @@ app.get('/api/activities', (req,res) => { res.json(
     "data": [
         {
             "title": "Service&maintenance",
-            "id": "01",
+            "activity_id": 1,
             "imageUrl":"http://google.com/img.jpg"
         },
         {
             "title": "Support",
-            "id": "02",
+            "activity_id": 2,
             "imageUrl":"http://google.com/tst.jpg"
         }
     ]
-}) });
+    }) });
 
-app.listen (3000, () => {console.log("Hello")});
+app.get('/api/location', (req,res) => { res.json(
+    {
+        "data": [
+            {
+                "activity_id": 1,
+                "title": "Lviv",
+                "location_id": 1,
+                "imageUrl":"http://google.com/img.jpg"
+            },
+            {   "activity_id": 1,
+                "title": "Odesa",
+                "location_id": 2,
+                "imageUrl":"http://google.com/tst.jpg"
+            }
+        ]
+    }) });
+
+app.listen (3000, () => {console.log("Hello 1")});
