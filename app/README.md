@@ -4,7 +4,7 @@
 
 ### Run Server
 
-Go to */workspaces/planning-module/app* and use command **yarn run start**
+Go to */app* and use command **yarn run start**
 
 
 ## **API routes**
@@ -32,20 +32,22 @@ Go to */workspaces/planning-module/app* and use command **yarn run start**
   * **Code:** 200
 
     **Content:** 
-    ```{
-    "data": [
-        {
-            "title": "Service&maintenance",
-            "id": 1,
-            "imageUrl":"http://google.com/img.jpg"
-        },
-        {
-            "title": "Support",
-            "id": 2,
-            "imageUrl":"http://google.com/tst.jpg"
-        }
-    ]
-}```
+    ```
+    {
+      "data": [
+          {
+              "title": "Service&maintenance",
+              "id": 1,
+              "imageUrl":"http://google.com/img.jpg"
+          },
+          {
+              "title": "Support",
+              "id": 2,
+              "imageUrl":"http://google.com/tst.jpg"
+          }
+              ]
+    }
+    ```
 
   * **Code:** 204
 
@@ -55,8 +57,7 @@ Go to */workspaces/planning-module/app* and use command **yarn run start**
 
   * **Code:** 400
      
-     **Content:**   
-     
+     **Content:**       
     ```
     { 
       "errors" : [
@@ -67,10 +68,6 @@ Go to */workspaces/planning-module/app* and use command **yarn run start**
       ]
     }
     ```
-
-  * **Code:** 204
-
-    **Content:** None
 
 
 ### **Get api/locations**
@@ -100,20 +97,22 @@ Go to */workspaces/planning-module/app* and use command **yarn run start**
 
   * **Code:** 200
     **Content:** 
-    ```{
-    "data": [
+    ```
+    {
+      "data": [
         {
-            "title": "Lviv",
-            "id": 1,
-            "imageUrl":"http://google.com/img.jpg"
+          "title": "Lviv",
+          "id": 1,
+          "imageUrl": "http://google.com/img.jpg"
         },
         {
-            "title": "Odesa",
-            "id": 2,
-            "imageUrl":"http://google.com/tst.jpg"
+          "title": "Odesa",
+          "id": 2,
+          "imageUrl": "http://google.com/tst.jpg"
         }
-    ]
-}```
+      ]
+    }
+    ```
 
   * **Code:** 204
     
@@ -142,14 +141,16 @@ Go to */workspaces/planning-module/app* and use command **yarn run start**
   * **Code:** 404
 
     **Content:** 
+    
     ```
-    { 
-      "errors" : [
+    {
+      "errors": [
         {
           "code": "ACTIVITY_NOT_AVAILABLE",
-          "message" : "Activity is not available"
+          "message": "Activity is not available"
         }
       ]
     }
+    ```
 
 
