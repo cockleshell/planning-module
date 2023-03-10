@@ -1,23 +1,63 @@
 # Planning Module
 
-## API routes
+## **How to start server and tests**
 
-### get activities
-- GET /api/activities
-```
-{
-    "data": [
-        {
-            "title": "Service&maintenance",
-            "id": "01",
-            "imageUrl":"http://google.com/img.jpg"
-        },
-        {
-            "title": "Support",
-            "id": "02",
-            "imageUrl":"http://google.com/tst.jpg"
-        }
-    ]
-}
-```
+### Run Server
 
+Go to */workspaces/planning-module/app* and use command **yarn run start**
+
+
+## **API routes**
+
+### **GET /api/activities**
+
+  Returns json data about available activities.
+
+* **URL**
+
+  /api/activities
+
+* **Method:**
+
+  `GET`
+  
+*  **URL Params**
+
+   **Required:**
+  
+    None
+
+* **Data Params**
+
+  None
+
+* **Success Response:**
+
+  * **Code:** 200
+
+
+### **Get api/locations**
+
+  Returns json data about available locations.
+
+* **URL**
+
+  /api/location?activity_id = [integer]
+
+* **Method:**
+
+  `GET`
+  
+*  **URL Params**
+
+   **Required:**
+ 
+   `activity_id = [integer]`
+
+* **Data Params**
+
+  None
+
+* **Success Response:**
+
+  * **Code:** 200
