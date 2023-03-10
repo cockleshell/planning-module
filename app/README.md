@@ -25,27 +25,61 @@ Go to */workspaces/planning-module/app* and use command **yarn run start**
 
    #### **Required:**
   
-    `language = [EN/FR/NL/DE/PL]`
+    `language = [string]`
 
 * **Success Response:**
 
   * **Code:** 200
 
+    **Content:** 
+    ```{
+    "data": [
+        {
+            "title": "Service&maintenance",
+            "id": 1,
+            "imageUrl":"http://google.com/img.jpg"
+        },
+        {
+            "title": "Support",
+            "id": 2,
+            "imageUrl":"http://google.com/tst.jpg"
+        }
+    ]
+}```
+
+  * **Code:** 204
+
+    **Content:** None
+
 * **Error Response:**
 
-  * **Code:** 404
-    
-     **Content:** { error : "Activity is not available." }
-
-  * **Code:** 422
+  * **Code:** 400
      
-     **Content:** { error : "Unprocessable Content." }
+     **Content:**   
+     
+    ```
+    { 
+      "errors" : [
+        {
+          "code" : "LANGUAGE_NOT_FOUND",
+          "message" : "Language is not provided"
+        }
+      ]
+    }
+    ```
+
+  * **Code:** 204
+
+    **Content:** None
 
 
 ### **Get api/locations**
 
-  Returns json data about available locations.
+  Each activity has its own list of available locations.
 
+  Returns json data about available locations based on select activity.
+
+  
 * **URL**
 
   /api/locations
@@ -58,24 +92,64 @@ Go to */workspaces/planning-module/app* and use command **yarn run start**
 
    **Required:**
 
-   Activity ID must be transmitted.
-   Each activity has its own list of available locations.
- 
    `activity_id = [integer]`
 
-   `language = [EN/FR/NL/DE/PL]`
+   `language = [string]`
 
 * **Success Response:**
 
   * **Code:** 200
+    **Content:** 
+    ```{
+    "data": [
+        {
+            "title": "Lviv",
+            "id": 1,
+            "imageUrl":"http://google.com/img.jpg"
+        },
+        {
+            "title": "Odesa",
+            "id": 2,
+            "imageUrl":"http://google.com/tst.jpg"
+        }
+    ]
+}```
+
+  * **Code:** 204
+    
+    **Content:** None  
 
 * **Error Response:**
 
+  * **Code:** 400
+    
+    **Content:** 
+    ```
+    { 
+      "errors" : [
+        { 
+          "code" : "ACTIVITY_NOT_FOUND",
+          "message" : "Activity is not provided."
+        },
+        {
+          "code" : "LANGUAGE_NOT_FOUND",
+          "message" : "Language is not provided"
+        }
+      ]
+    }
+    ```
+  
   * **Code:** 404
 
-    **Content:** { error : "Location is not available." }
+    **Content:** 
+    ```
+    { 
+      "errors" : [
+        {
+          "code": "ACTIVITY_NOT_AVAILABLE",
+          "message" : "Activity is not available"
+        }
+      ]
+    }
 
-  * **Code:** 422
-    
-    **Content:** { error : "Unprocessable Content." }
 
