@@ -1,6 +1,6 @@
 # Planning Module
 
-## **How to start server and tests**
+## **How to start server**
 
 ### Run Server
 
@@ -23,17 +23,23 @@ Go to */workspaces/planning-module/app* and use command **yarn run start**
   
 *  **URL Params**
 
-   **Required:**
+   #### **Required:**
   
-    None
-
-* **Data Params**
-
-  None
+    `language = [EN/FR/NL/DE/PL]`
 
 * **Success Response:**
 
   * **Code:** 200
+
+* **Error Response:**
+
+  * **Code:** 404
+    
+     **Content:** { error : "Activity is not available." }
+
+  * **Code:** 422
+     
+     **Content:** { error : "Unprocessable Content." }
 
 
 ### **Get api/locations**
@@ -42,7 +48,7 @@ Go to */workspaces/planning-module/app* and use command **yarn run start**
 
 * **URL**
 
-  /api/location?activity_id = [integer]
+  /api/locations
 
 * **Method:**
 
@@ -51,13 +57,25 @@ Go to */workspaces/planning-module/app* and use command **yarn run start**
 *  **URL Params**
 
    **Required:**
+
+   Activity ID must be transmitted.
+   Each activity has its own list of available locations.
  
    `activity_id = [integer]`
 
-* **Data Params**
-
-  None
+   `language = [EN/FR/NL/DE/PL]`
 
 * **Success Response:**
 
   * **Code:** 200
+
+* **Error Response:**
+
+  * **Code:** 404
+
+    **Content:** { error : "Location is not available." }
+
+  * **Code:** 422
+    
+    **Content:** { error : "Unprocessable Content." }
+
