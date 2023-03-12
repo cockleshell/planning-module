@@ -21,7 +21,7 @@ Go to */app* and use command **yarn run start**
 
   `GET`
   
-*  **URL Params**
+* **URL Params**
 
    #### **Required:**
   
@@ -57,7 +57,7 @@ Go to */app* and use command **yarn run start**
 
   * **Code:** 400
      
-     **Content:**       
+    **Content:**       
     ```
     { 
       "errors" : [
@@ -85,7 +85,7 @@ Go to */app* and use command **yarn run start**
 
   `GET`
   
-*  **URL Params**
+* **URL Params**
 
    **Required:**
 
@@ -97,7 +97,7 @@ Go to */app* and use command **yarn run start**
 
   * **Code:** 200
   
-      **Content:** 
+    **Content:** 
 
     ```
     {
