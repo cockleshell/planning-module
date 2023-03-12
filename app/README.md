@@ -9,7 +9,7 @@ Go to */app* and use command **yarn run start**
 
 ## **API routes**
 
-### **GET /api/activities**
+### **List of activities** 
 
   Returns json data about available activities.
 
@@ -70,7 +70,7 @@ Go to */app* and use command **yarn run start**
     ```
 
 
-### **Get api/locations**
+### **List of locations**
 
   Each activity has its own list of available locations.
 
@@ -96,7 +96,9 @@ Go to */app* and use command **yarn run start**
 * **Success Response:**
 
   * **Code:** 200
-    **Content:** 
+  
+      **Content:** 
+
     ```
     {
       "data": [
